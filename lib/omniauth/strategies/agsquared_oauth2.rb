@@ -13,8 +13,8 @@ module OmniAuth
       # initializing your consumer from the OAuth gem.
       option :client_options,
         site: "https://www.agsquared.com",
-        authorize_url: "/en/auth",
-        token_url: "/en/auth/token"
+        authorize_url: "/en/authorize",
+        token_url: "/en/authorize/token"
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
