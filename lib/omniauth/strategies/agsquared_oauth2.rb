@@ -17,7 +17,7 @@ module OmniAuth
         authorize_url: 'https://www.agsquared.com/en/authorize',
         token_url: 'https://api.agsquared.com/v1/oauth2/token'
 
-      #option :authorize_options, scope: 'farmersWeb'
+      option :token_options, scope: 'farmersWeb'
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
@@ -37,6 +37,17 @@ module OmniAuth
         {
           'raw_info' => raw_info
         }
+      end
+
+      def build_access_token
+        puts "building access token"
+        options.token_params.merge!(:headers => {'Authorization' => basic_auth_header })
+        super
+      end
+
+      def basic_auth_header
+        puts "building basic auth header for #{options[:client_id]}"
+        "Basic " + Base64.strict_encode64("#{options[:client_id]}:#{options[:client_secret]}")
       end
 
       #def authorize_params
