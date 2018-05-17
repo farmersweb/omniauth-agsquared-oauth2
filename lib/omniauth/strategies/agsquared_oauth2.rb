@@ -42,6 +42,7 @@ module OmniAuth
       def build_access_token
         puts "building access token"
         options.token_params.merge!(:headers => {'Authorization' => basic_auth_header })
+        ap options.token_params
         super
       end
 
