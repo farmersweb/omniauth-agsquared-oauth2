@@ -32,11 +32,11 @@ describe OmniAuth::Strategies::AgsquaredOauth2 do
     end
 
     it "has correct authorize_url" do
-      expect(subject.client.options[:authorize_url]).to eq("/en/auth")
+      expect(subject.client.options[:authorize_url]).to eq("https://www.agsquared.com/en/authorize")
     end
 
     it "has correct token_url" do
-      expect(subject.client.options[:token_url]).to eq("/en/auth/token")
+      expect(subject.client.options[:token_url]).to eq("https://api.agsquared.com/v1/oauth2/token")
     end
 
     describe "overrides" do
