@@ -16,6 +16,8 @@ module OmniAuth
         authorize_url: "https://www.agsquared.com/en/authorize",
         token_url: "https://api.agsquared.com/v1/oauth2/token"
 
+      option :authorize_options, [:scope, :redirect_uri]
+
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
       # additional calls (if the user id is returned with the token
