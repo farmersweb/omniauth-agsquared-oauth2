@@ -17,7 +17,7 @@ module OmniAuth
         authorize_url: 'https://www.agsquared.com/en/authorize',
         token_url: 'https://api.agsquared.com/v1/oauth2/token'
 
-      option :token_options, scope: 'farmersWeb'
+      # option :token_options, scope: 'farmersWeb'
 
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
