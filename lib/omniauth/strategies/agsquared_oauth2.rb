@@ -25,12 +25,13 @@ module OmniAuth
       # additional calls (if the user id is returned with the token
       # or as a URI parameter). This may not be possible with all
       # providers.
-      uid { raw_info['id'] }
+      uid { raw_info['farms'][0]['id'] }
 
       info do
         {
-          name: raw_info['name'],
-          email: raw_info['email']
+          name: raw_info['farms'][0]['name'],
+          uid: raw_info['farms'][0]['id'],
+          user_name: raw_info['farms'][0]['user_name']
         }
       end
 
@@ -40,16 +41,14 @@ module OmniAuth
         }
       end
 
-      
-
       def raw_info
-        ap access_token
         @raw_info ||= access_token.get('https://api.agsquared.com/v1/me').parsed
       end
 
       def callback_url
         full_host + script_name + callback_path
       end
+
     end
   end
 end
