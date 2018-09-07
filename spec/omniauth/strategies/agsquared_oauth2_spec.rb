@@ -28,11 +28,11 @@ describe OmniAuth::Strategies::AgsquaredOauth2 do
 
   describe "#client_options" do
     it "has correct site" do
-      expect(subject.client.site).to eq("https://www.agsquared.com")
+      expect(subject.client.site).to eq("https://app.agsquared.com")
     end
 
     it "has correct authorize_url" do
-      expect(subject.client.options[:authorize_url]).to eq("https://www.agsquared.com/en/authorize")
+      expect(subject.client.options[:authorize_url]).to eq("https://app.agsquared.com/en/authorize")
     end
 
     it "has correct token_url" do

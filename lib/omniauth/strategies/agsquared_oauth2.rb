@@ -13,8 +13,8 @@ module OmniAuth
       # This is where you pass the options you would pass when
       # initializing your consumer from the OAuth gem.
       option :client_options,
-        site: 'https://www.agsquared.com',
-        authorize_url: 'https://www.agsquared.com/en/authorize',
+        site: 'https://app.agsquared.com',
+        authorize_url: 'https://app.agsquared.com/en/authorize',
         token_url: 'https://api.agsquared.com/v1/oauth2/token'
 
       option :authorize_options, %i[scope redirect_uri]
